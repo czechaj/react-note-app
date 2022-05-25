@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.App {
+  text-align: center;
+  min-height: 95vh;
+  font-size: 12px;
+  font-family: "Merriweather", serif;
+  background-image: url("https://images.unsplash.com/photo-1573598702727-fd880833105d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #11324d;
+  height: 9vh;
+}
+
+header h1 {
+  color: #cfcece;
+  cursor: pointer;
+}
+
+.new .input .close {
+  margin-left: 38vw;
+  width: 3vw;
+  background-color: transparent;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.new .input ion-icon {
+  font-size: 2rem;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.new .input form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto 4rem;
+  width: 40vw;
 }
 
-.App-link {
-  color: #61dafb;
+.new .input form textarea,
+.new .input form input {
+  resize: none;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.36em 0.5em;
+  color: #cfcece;
+  background-color: #11324d;
+  opacity: 83%;
+  border: 1px solid #8b8a8b;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+  width: 40vw;
+  margin-bottom: 0.51rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.new .input form label {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.new .addNote {
+  margin-left: 80vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.new .addNote ion-icon {
+  pointer-events: none;
+}
+
+.notes {
+  letter-spacing: 0.14rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  color: #cfcece;
+}
+
+.notes .card {
+  width: 25vw;
+  border: none;
+  background-color: #5584ac;
+  border-radius: 5px;
+  opacity: 80%;
+  margin: 2rem auto;
+  max-height: 35vh;
+  min-height: 25vh;
+  overflow: auto;
+}
+
+.notes .card .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 1rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.notes .card .actions button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.notes .card .actions button ion-icon {
+  color: #cfcece;
+  cursor: pointer;
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.notes .card .card-header {
+  display: block;
+  border-bottom: 1px solid #11324d;
+  width: inherit;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.notes .card .card-header small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: x-small;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.notes .card .card-content {
+  padding: 0 2rem;
+  word-break: break-all;
+  text-align: left;
+}
+
+.notes .card .card-content form textarea,
+.notes .card .card-content form input {
+  resize: none;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.36em 0.5em;
+  color: #cfcece;
+  background-color: #11324d;
+  opacity: 83%;
+  border: 1px solid #8b8a8b;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+  width: 100%;
+  margin-bottom: 0.51rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  background-color: #11324d;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 5vh;
+}
+
+footer span {
+  margin-right: 2rem;
+  color: #cfcece;
+}
+
+footer span a {
+  text-decoration: none;
+  color: rgba(207, 206, 206, 0.5);
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    font-size: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .new .input .close {
+    margin-left: 50%;
+  }
+
+  .new .input form {
+    margin-bottom: 1rem;
+    width: 84vw;
+  }
+
+  .new .input form textarea,
+  .new .input form input {
+    font-size: 0.9rem;
+    padding: 0.56em 0.5em;
+    margin-top: 0.4rem;
+    width: 80%;
+  }
+
+  .new .input form label {
+    margin-left: 10%;
+    font-size: 0.9rem;
+  }
+
+  .notes {
+    font-size: 0.8rem;
+  }
+
+  .notes .card {
+    width: 40vw;
+    min-height: 27vh;
+    max-height: 43vh;
+  }
+
+  .notes .card .actions button ion-icon {
+    font-size: 1.4rem;
+  }
+
+  .notes .card .card-header {
+    font-size: 0.89rem;
+  }
+
+  .notes .card .card-header small {
+    font-size: 0.6rem;
   }
 }
+
+/*# sourceMappingURL=app.css.map */

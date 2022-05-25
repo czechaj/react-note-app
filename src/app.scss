@@ -1,0 +1,226 @@
+@mixin centerify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$primary: #11324d;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  min-height: 95vh;
+  font-size: 12px;
+  font-family: "Merriweather", serif;
+  background-image: url("https://images.unsplash.com/photo-1573598702727-fd880833105d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $primary;
+  height: 9vh;
+
+  h1 {
+    color: #cfcece;
+    cursor: pointer;
+  }
+}
+.new {
+  .input {
+    .close {
+      margin-left: 38vw;
+      width: 3vw;
+      background-color: transparent;
+      border: none;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    ion-icon {
+      font-size: 2rem;
+      pointer-events: none;
+    }
+    form {
+      @include centerify();
+      flex-direction: column;
+      margin: 0 auto 4rem;
+      width: 40vw;
+
+      textarea,
+      input {
+        resize: none;
+        font-size: 1rem;
+        font-family: inherit;
+        padding: 0.36em 0.5em;
+        color: #cfcece;
+        background-color: $primary;
+        opacity: 83%;
+        border: 1px solid #8b8a8b;
+        border-radius: 4px;
+        margin-top: 0.4rem;
+        width: 40vw;
+        margin-bottom: 0.51rem;
+      }
+
+      label {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  .addNote {
+    margin-left: 80vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    ion-icon {
+      pointer-events: none;
+    }
+  }
+}
+
+.notes {
+  letter-spacing: 0.14rem;
+  display: flex;
+  flex-flow: row wrap;
+  width: 90vw;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  color: #cfcece;
+  .card {
+    width: 25vw;
+    border: none;
+    background-color: #5584ac;
+    border-radius: 5px;
+    opacity: 80%;
+    margin: 2rem auto;
+    max-height: 35vh;
+    min-height: 25vh;
+    overflow: auto;
+    .actions {
+      display: flex;
+      margin: 1rem 1rem;
+      justify-content: space-between;
+
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        ion-icon {
+          color: #cfcece;
+          cursor: pointer;
+          font-size: 2rem;
+          pointer-events: none;
+        }
+      }
+    }
+    .card-header {
+      display: block;
+      border-bottom: 1px solid $primary;
+      width: inherit;
+      overflow: hidden;
+      padding: 1rem 0;
+      small {
+        display: flex;
+        font-size: x-small;
+        justify-content: flex-end;
+      }
+    }
+    .card-content {
+      padding: 0 2rem;
+      word-break: break-all;
+      text-align: left;
+      form {
+        textarea,
+        input {
+          resize: none;
+          font-size: 1rem;
+          font-family: inherit;
+          padding: 0.36em 0.5em;
+          color: #cfcece;
+          background-color: $primary;
+          opacity: 83%;
+          border: 1px solid #8b8a8b;
+          border-radius: 4px;
+          margin-top: 0.4rem;
+          width: 100%;
+          margin-bottom: 0.51rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  @include centerify();
+  justify-content: flex-end;
+  background-color: $primary;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 5vh;
+  span {
+    margin-right: 2rem;
+    color: rgb(207, 206, 206);
+    a {
+      text-decoration: none;
+      color: rgba(207, 206, 206, 0.5);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    font-size: 10px;
+  }
+  .new .input {
+    .close {
+      margin-left: 50%;
+    }
+    form {
+      margin-bottom: 1rem;
+      width: 84vw;
+      textarea,
+      input {
+        font-size: 0.9rem;
+        padding: 0.56em 0.5em;
+        margin-top: 0.4rem;
+        width: 80%;
+      }
+      label {
+        margin-left: 10%;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .notes {
+    font-size: 0.8rem;
+    .card {
+      width: 40vw;
+      min-height: 27vh;
+      max-height: 43vh;
+      .actions {
+        button {
+          ion-icon {
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .card-header {
+        font-size: 0.89rem;
+        small {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
